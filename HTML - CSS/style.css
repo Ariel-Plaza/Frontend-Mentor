@@ -1,0 +1,317 @@
+@charset "UTF-8";
+
+/* The designs were created to the following widths: - Mobile: 375px - Desktop: 1440px */
+
+/* Aquí definimos las Custom properties */
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  /* Tipografía */
+  --tipo-principal: 'Montserrat';
+  --tipo-secundaria: 'Fraunces';
+  font-family: 'Montserrat';
+  font-family: 'Fraunces';
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1rem;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  padding-top: 20px;
+  background-color: var(--Cream);
+
+}
+
+.card {
+  width: 90%;
+  min-width: 340px;
+  min-height: 605px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: var(--White)
+}
+
+img {
+  min-height: 266px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.text {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  min-height: 400px;
+  padding: 25px 0;
+}
+
+h1 {
+  color: var(--Very-dark-blue);
+  font-family: var(--tipo-secundaria);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+}
+
+h2 {
+  color: var(--Dark-grayish-blue);
+  font-family: var(--tipo-principal);
+  font-size: 1.3rem;
+  letter-spacing: 0.4rem;
+  font-weight: 500;
+}
+
+p {
+  color: var(--Dark-grayish-blue);
+  font-size: 1.4rem;
+  word-spacing: 0.25rem;
+  line-height: 2rem;
+}
+
+.price {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  color: var(--Dark-cyan);
+  gap: 1rem;
+}
+
+.price-offer {
+  font-family: var(--tipo-secundaria);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.price-original {
+  font-family: var(--tipo-principal);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--Dark-grayish-blue);
+  text-decoration: line-through;
+}
+
+button {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--tipo-principal);
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 15px;
+
+  background-color: var(--Dark-cyan);
+}
+
+.cart {
+  width: 17px;
+  height: 17px;
+  background-image: url("./images/icon-cart.svg");
+  background-repeat: none;
+  background-attachment: center;
+  background-size: cover;
+}
+
+button p {
+  color: var(--White);
+}
+
+@media screen and (min-width:1440px) {
+  .card {
+    width: 90%;
+    min-width: 1300px;
+    min-height: 1023px;
+    display: flex;
+    flex-direction: row;
+    background-color: unset;
+  }
+
+  img {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+  }
+
+  .text {
+    padding: 4.8rem;
+    background-color: var(--White);
+  }
+
+  h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 8rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    letter-spacing: 0.7rem;
+
+  }
+
+  p {
+    font-size: 3.4rem;
+    line-height: 5rem;
+    word-spacing: 0.1rem;
+  }
+
+  .price {
+    gap: 2rem;
+  }
+
+  .price-offer {
+    font-size: 8rem;
+  }
+
+  .price-original {
+    font-size: 3.4rem;
+  }
+
+  button {
+    min-height: 120px;
+    gap: 4rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .cart {
+    width: 45px;
+    height: 45px;
+   
+  }
+}
